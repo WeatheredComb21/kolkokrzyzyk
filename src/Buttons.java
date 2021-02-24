@@ -14,6 +14,7 @@ public class Buttons extends JPanel implements ActionListener {
         for (int i = 0; i < button.length; i++) {
             button[i] = new JButton("");
             button[i].addActionListener(this);
+            button[i].setBackground(Color.WHITE);
             add(button[i]);
 
         }
@@ -32,6 +33,7 @@ public class Buttons extends JPanel implements ActionListener {
             for (int i = 0; i < button.length; i++){
                 button[i].setText("");
                 button[i].setEnabled(true);
+                button[i].setBackground(Color.WHITE);
             }
         }
 
@@ -48,13 +50,30 @@ public class Buttons extends JPanel implements ActionListener {
             if(source.equals(button[i])){
                 button[i].setText(symbol);
                 button[i].setEnabled(false);
+                
             }
         }
 
+        checkResult();
+    }
+public void checkResult(){
+    String[] s = new String[3];
+    for(int i = 0; i < 3; i++){
+        s[i] = button[i].getText();
 
 
     }
+if(s[0].equals(s[1]) && s[0].equals(s[2]) && s[0].equals("")){
+    button[0].setBackground(Color.GREEN);
+    button[1].setBackground(Color.GREEN);
+    button[2].setBackground(Color.GREEN);
 
+
+}
+
+
+
+}
    
   
 
